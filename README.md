@@ -31,13 +31,13 @@ node bin/www
 
 ### Make Requests
 
-Creating and refreshing access tokens:
+Creating and refreshing access tokens(Arguments ar set in the body and encoded as x-www-form-urlencoded):
 ```
 http POST http://localhost:1337/api/oauth/token grant_type=password client_id=android client_secret=SomeRandomCharsAndNumbers username=myapi password=abc1234
 http POST http://localhost:1337/api/oauth/token grant_type=refresh_token client_id=android client_secret=SomeRandomCharsAndNumbers refresh_token=[TOKEN]
 ```
 
-Creating your article data:
+Creating your article data(Arguments ar set in the body and encoded as x-www-form-urlencoded and Authorization(key) Bearer[space]AuthToken(value) is set in the header):
 ```
 http POST http://localhost:1337/api/articles title=NewArticle author='John Doe' description='Lorem ipsum dolar sit amet' images:='[{"kind":"thumbnail", "url":"http://habrahabr.ru/images/write-topic.png"}, {"kind":"detail", "url":"http://habrahabr.ru/images/write-topic.png"}]' Authorization:'Bearer PUT_YOUR_TOKEN_HERE'
 ```
@@ -87,3 +87,4 @@ Updated by:
 ## License
 
 [MIT](https://github.com/ealeksandrov/NodeAPI/blob/master/LICENSE)
+
